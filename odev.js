@@ -38,5 +38,5 @@ window.openPetDetail = (id) => {
   fetch(`${window.mockApiUrl}/${id}`).then((response) => response.json()).then((pet) => {
     const petDescription = pet.description;
     createModal(petDescription);
-  })
+  }).catch((err) => console.log(err)); //log the error.
 };
